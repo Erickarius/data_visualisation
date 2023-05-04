@@ -2,8 +2,11 @@ import matplotlib.pyplot as plt
 
 plt.style.use('seaborn')
 
+x_values = [1, 2, 3, 4, 5]
+y_values = [1, 4, 9, 16, 25]
+
 fig, ax = plt.subplots()
-ax.scatter(2, 4, s=200)
+ax.scatter(x_values, y_values, s=100)
 
 #Zdefiniowanie tytułu wykresu i etykiet osi.
 ax.set_title("Kwadraty liczb", fontsize=24)
