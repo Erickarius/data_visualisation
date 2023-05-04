@@ -11,7 +11,7 @@ while True:
 
 	#Wyświetlenie punktów błądzenia losowego.
 	plt.style.use('classic')
-	fig, ax = plt.subplots()
+	fig, ax = plt.subplots(figsize=(10, 6), dpi=128)
 	point_numbers = range(rw.num_points)
 
 	ax.scatter(rw.x_values, rw.y_values, c=point_numbers, 
