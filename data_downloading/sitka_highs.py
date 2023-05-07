@@ -8,7 +8,7 @@ with open(filename) as f:
 	reader = csv.reader(f)
 	header_row = next(reader)
 
-	#Pobieranie dat i najwyższych temperatur z pliku
+	#Pobieranie dat oraz najwyższych i najniższych temperatur z pliku
 	dates, highs, lows = [], [], []
 	for row in reader:
 		current_date = datetime.strptime(row[2], "%Y-%m-%d")
@@ -18,7 +18,7 @@ with open(filename) as f:
 		highs.append(high)
 		lows.append(low)
 
-#Dane wykresu.
+#Wygenerowanie wykresu najniższych i najwyżych temperatur.
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
 ax.plot(dates, highs, c='red', alpha=0.5)
