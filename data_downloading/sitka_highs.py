@@ -1,4 +1,5 @@
 import csv
+from datetime import datetime
 
 import matplotlib.pyplot as plt
 
@@ -7,20 +8,23 @@ with open(filename) as f:
 	reader = csv.reader(f)
 	header_row = next(reader)
 
-	#Pobieranie temperatur maksymalnych z pliku.
-	highs = []
+	#Pobieranie dat i najwyższych temperatur z pliku
+	dates, highs = [], []
 	for row in reader:
+		current_date = datetime.strptime(row[2], "%Y-%m-%d")
 		high = int(row[5])
+		dates.append(current_date)
 		highs.append(high)
 
 #Dane wykresu.
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.plot(highs, c='red')
+ax.plot(dates, highs, c='red')
 
 #Formatowanie wykresu.
 ax.set_title("Najwyższa temeperatura dnia, lipiec 2018", fontsize=24)
 ax.set_xlabel('', fontsize=16)
+fig.autofmt_xdate()
 ax.set_ylabel("Temperatura (F)", fontsize=16)
 ax.tick_params(axis='both', which='major', labelsize=16)
 
