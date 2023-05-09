@@ -18,7 +18,7 @@ x_values = list(range(2, max_result+1))
 frequencies = [results.count(value) for value in x_values]
 
 # Utworzenie wykresu dla rzutów kośćmi.
-plt.style.use('seaborn')
+plt.style.use('seaborn-v0_8')
 fig, ax = plt.subplots()
 ax.bar(x_values, frequencies)
 
@@ -32,7 +32,7 @@ plt.show()
 
 # Przygotowanie danych do błądzenia losowego na podstawie rzutów kośćmi.
 rw = RandomWalk(1000)
-rw.fill_walk(results)
+rw.fill_walk()
 
 # Przygotowanie danych do wizualizacji błądzenia losowego.
 data = [Scatter(x=rw.x_values, y=rw.y_values, mode='markers',
@@ -45,5 +45,5 @@ layout = Layout(title='Błądzenie losowe na podstawie rzutu kośćmi',
                 yaxis=dict(title='Wartość'))
 
 # Zapisanie wizualizacji błądzenia losowego do pliku HTML.
-offline.plot({'data': data, 'layout': layout}, filename='random_walk.html', auto_open=False)
+offline.plot({'data': data, 'layout': layout}, filename='die_random_walk.html')
 
