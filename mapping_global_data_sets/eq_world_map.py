@@ -22,7 +22,10 @@ for eq_dict in all_eq_dicts:
 data = [{'type': 'scattergeo',
 		'lon': lons,
 		'lat': lats,
-		}]
+		'marker': {
+			'size': [5*mag for mag in mags],
+		}, }]
+
 my_layout = Layout(title='Trzęsienia ziemi na świecie')
 
 fig = {'data': data, 'layout': my_layout}
