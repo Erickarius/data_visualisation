@@ -19,7 +19,10 @@ for eq_dict in all_eq_dicts:
 	lons.append(lon)
 	lats.append(lat)
 
-data = [Scattergeo(lon=lons, lat=lats)]
+data = [{'type': 'scattergeo',
+		'lon': lons,
+		'lat': lats,
+		}]
 my_layout = Layout(title='Trzęsienia ziemi na świecie')
 
 fig = {'data': data, 'layout': my_layout}
