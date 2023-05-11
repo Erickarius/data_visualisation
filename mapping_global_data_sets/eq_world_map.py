@@ -17,6 +17,8 @@ for eq_dict in all_eq_dicts:
 	lats.append(eq_dict['geometry']['coordinates'][1])
 	hover_texts.append(eq_dict['properties']['title'])
 
+title = all_eq_data['metadata']['title']
+
 data = [{'type': 'scattergeo',
 		'lon': lons,
 		'lat': lats,
@@ -30,7 +32,7 @@ data = [{'type': 'scattergeo',
 				},
 			 }]
 
-my_layout = Layout(title='Trzęsienia ziemi na świecie')
+my_layout = Layout(title=title)
 
 fig = {'data': data, 'layout': my_layout}
 offline.plot(fig, filename='global_earthquakes.html')
