@@ -8,6 +8,6 @@ print(f"Kod stanu: {r.status_code}")
 
 #Analiza struktury danych.
 response_dict = r.json()
-readable_file = 'data_readable_hn_data.json'
+readable_file = 'data/data_readable_hn_data.json'
 with open(readable_file, 'w') as f:
 	json.dump(response_dict, f, indent=4)
