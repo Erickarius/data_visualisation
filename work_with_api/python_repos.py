@@ -19,5 +19,5 @@ for repo_dict in repo_dicts:
 	print(f"\nNazwa: {repo_dict['name']}")
 	print(f"Właściciel: {repo_dict['owner']['login']}")
 	print(f"Gwiazdkii: {repo_dict['stargazers_count']}")
-	print(f"Repozytorium: {repo_dict['html_url']}")
+	print(f"Repozytorium: {repo_dict['html_url']}")1
 	print(f"Opis: {repo_dict['description']}")
