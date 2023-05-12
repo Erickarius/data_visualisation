@@ -15,6 +15,12 @@ print(f"Liczba zwróconych repozytoriów: {len(repo_dicts)}")
 
 #Przeanalizowanie pierwszego repozytorium.
 repo_dict = repo_dicts[0]
-print(f"\nKlucze: {len(repo_dict)}")
-for key in sorted(repo_dict.keys()):
-	print(key)
+
+print('\nWybrane informacje o pierwszym repozytorum:')
+print(f"Nazwa: {repo_dict['name']}")
+print(f"Właściciel: {repo_dict['owner']['login']}")
+print(f"Gwiazdkii: {repo_dict['stargazers_count']}")
+print(f"Repozytorium: {repo_dict['html_url']}")
+print(f"Utworzone: {repo_dict['created_at']}")
+print(f"Uaktualnione: {repo_dict['updated_at']}")
+print(f"Opis: {repo_dict['description']}")
