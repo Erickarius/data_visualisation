@@ -9,7 +9,7 @@ die_2 = Die()
 
 #Wykonanie pewnej liczby rzutów i umieszczenie wyników na liście.
 results = []
-for roll_num in range(50_000):
+for roll_num in range(1000):
 	result = die_1.roll() * die_2.roll()
 	results.append(result)
 
