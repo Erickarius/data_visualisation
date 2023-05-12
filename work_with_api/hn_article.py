@@ -1,7 +1,7 @@
 import requests
 import json
 
-#Wykonanie wywołania API i zahcowanie otrzymanej odpowiedzi.
+#Wykonanie wywołania API i zachowanie otrzymanej odpowiedzi.
 url = 'https://hacker-news.firebaseio.com/v0/item/19155826.json'
 r = requests.get(url)
 print(f"Kod stanu: {r.status_code}")
